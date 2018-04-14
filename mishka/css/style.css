@@ -64,6 +64,11 @@ img {
     background-color: #444444;
     color: rgba(255, 255, 255, 0.3); }
 
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent; }
+
 .container {
   width: 100%;
   padding: 0 30px;
