@@ -1942,7 +1942,8 @@ label {
 .product-type__label {
   position: relative;
   padding-left: 62px;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  -webkit-tap-highlight-color: transparent; }
 
 .product-type__label::before {
   content: "";
@@ -2018,7 +2019,8 @@ label {
 .color__label {
   position: relative;
   display: block;
-  padding-left: 62px; }
+  padding-left: 62px;
+  -webkit-tap-highlight-color: transparent; }
 
 .color__item {
   margin-bottom: 44px; }
