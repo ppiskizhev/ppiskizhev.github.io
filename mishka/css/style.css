@@ -107,31 +107,48 @@ label {
   cursor: pointer;
   z-index: 2; }
 
-.main-nav--closed .main-nav__toggle::before {
+.main-nav--closed .main-nav__toggle::before, .main-nav--closed .main-nav__toggle::after {
   content: "";
   position: absolute;
-  top: 3px;
   right: 1px;
   width: 20px;
   height: 2px;
   background-color: #000000;
   border-radius: 3px;
-  -webkit-box-shadow: 0 6px 0 0 #000000, 0 12px 0 0 #000000;
-          box-shadow: 0 6px 0 0 #000000, 0 12px 0 0 #000000; }
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: top 0.2s 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.4s 0.2s;
+  transition: top 0.2s 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.4s 0.2s;
+  transition: transform 0.2s, top 0.2s 0.2s, box-shadow 0.4s 0.2s;
+  transition: transform 0.2s, top 0.2s 0.2s, box-shadow 0.4s 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.4s 0.2s; }
+
+.main-nav--closed .main-nav__toggle::before {
+  top: 3px;
+  -webkit-box-shadow: 0 6px 0 0 #000000;
+          box-shadow: 0 6px 0 0 #000000; }
+
+.main-nav--closed .main-nav__toggle::after {
+  top: 15px; }
 
 .main-nav--opened .main-nav__toggle::before, .main-nav--opened .main-nav__toggle::after {
   content: "";
   position: absolute;
   top: 9px;
   right: 0;
-  width: 27px;
+  width: 23px;
   height: 2px;
   background-color: #000000;
-  border-radius: 3px; }
+  border-radius: 3px;
+  -webkit-transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  transition: top 0.2s, -webkit-transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s;
+  transition: top 0.2s, transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s; }
 
 .main-nav--opened .main-nav__toggle::before {
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg); }
+          transform: rotate(-45deg);
+  -webkit-box-shadow: 0 6px 0 0 transparent;
+          box-shadow: 0 6px 0 0 transparent; }
 
 .main-nav--opened .main-nav__toggle::after {
   -webkit-transform: rotate(45deg);
@@ -894,6 +911,11 @@ label {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+.reviews__slider {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
 .reviews__title {
   margin: 0;
   margin-bottom: 9px;
@@ -901,6 +923,9 @@ label {
   line-height: 30px;
   font-weight: 700;
   color: #000000; }
+
+.reviews_item {
+  min-height: 218px; }
 
 .reviews__comment {
   font-size: 15px;
@@ -960,6 +985,9 @@ label {
     opacity: 0.6; }
   .reviews__btn:active {
     opacity: 0.3; }
+  .reviews__btn[disabled] {
+    opacity: 0.3;
+    cursor: default; }
 
 @media (min-width: 768px) {
   .reviews {
@@ -1028,6 +1056,8 @@ label {
     margin-bottom: 34px;
     font-size: 53px;
     line-height: 57px; }
+  .reviews_item {
+    min-height: 166px; }
   .reviews__comment {
     width: auto;
     max-width: 780px;
