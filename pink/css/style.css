@@ -61,6 +61,7 @@ img {
           box-sizing: border-box;
   border: 3px solid #ffffff;
   border-radius: 30px;
+  outline: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   .btn:hover {
@@ -1728,8 +1729,18 @@ input[id="reviews-input-3"]:checked ~ .reviews__inner .reviews__list {
   width: 280px;
   margin: 0 auto; }
 
-.upload__photo img {
-  display: block; }
+.upload__photo {
+  overflow: hidden;
+  border: 1px solid red; }
+  .upload__photo img {
+    position: relative;
+    max-width: none;
+    top: 0;
+    left: 0;
+    display: block;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    cursor: pointer; }
 
 .upload__tools {
   position: relative;
@@ -1784,7 +1795,6 @@ input[id="reviews-input-3"]:checked ~ .reviews__inner .reviews__list {
 .upload__control {
   position: absolute;
   top: -7px;
-  left: 30%;
   width: 14px;
   height: 14px;
   border: 2px solid #d22856;
@@ -1792,15 +1802,19 @@ input[id="reviews-input-3"]:checked ~ .reviews__inner .reviews__list {
   background-color: #ffffff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 9999; }
   .upload__control:active {
     background-color: #d22856; }
 
+.upload__control--crop {
+  left: 0; }
+
 .upload__control--fill {
-  left: 85%; }
+  left: 50%; }
 
 .upload__control--contrast {
-  left: 55%; }
+  left: 50%; }
 
 .upload__input:checked + .upload__tool svg {
   fill: #d22856;
