@@ -1731,7 +1731,7 @@ input[id="reviews-input-3"]:checked ~ .reviews__inner .reviews__list {
 
 .upload__photo {
   overflow: hidden;
-  border: 1px solid red; }
+  border: 1px solid #d22856; }
   .upload__photo img {
     position: relative;
     max-width: none;
@@ -1771,7 +1771,8 @@ input[id="reviews-input-3"]:checked ~ .reviews__inner .reviews__list {
 
 .upload__icon {
   display: block;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
   .upload__icon svg {
     fill: #283645;
     opacity: 0.3;
@@ -1790,7 +1791,8 @@ input[id="reviews-input-3"]:checked ~ .reviews__inner .reviews__list {
           transform: translateX(-50%);
   width: 240px;
   height: 2px;
-  background-color: #283645; }
+  background-color: #283645;
+  outline: none; }
 
 .upload__control {
   position: absolute;
@@ -1802,6 +1804,7 @@ input[id="reviews-input-3"]:checked ~ .reviews__inner .reviews__list {
   background-color: #ffffff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  outline: none;
   cursor: pointer;
   z-index: 9999; }
   .upload__control:active {
