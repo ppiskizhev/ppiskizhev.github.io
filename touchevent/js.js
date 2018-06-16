@@ -1,23 +1,17 @@
 let obj = document.querySelector('.touchable');
-obj.addEventListener('touchstart', dragStart);
 let shiftX;
 let shiftY;
+obj.addEventListener('touchstart', dragStart);
+obj.addEventListener('touchmove', dragMove);
 
 function dragStart(e) {
-  shiftX = e.pageX - getCoords(this).left;
-  shiftY = e.pageY - getCoords(this).top;
-  document.addEventListener('touchmove', dragMove);
-  document.addEventListener('touchend', dragEnd);
+  shiftX = e.changedTouches[0].pageX - getCoords(this).left;
+  shiftY = e.changedTouches[0].pageY - getCoords(this).top;
 }
 
 function dragMove(e) {
-  obj.style.left = e.pageX - shiftX + 'px';
-  obj.style.top = e.pageY - shiftY + 'px';
-}
-
-function dragEnd() {
-  document.removeEventListener('touchend', dragEnd);
-  document.removeEventListener('touchmove', dragMove);
+  this.style.left = e.changedTouches[0].pageX - shiftX + 'px';
+  this.style.top = e.changedTouches[0].pageY - shiftY + 'px';
 }
     
 function getCoords(elem) {
