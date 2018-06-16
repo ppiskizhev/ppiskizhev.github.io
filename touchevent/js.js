@@ -1,13 +1,13 @@
 let obj = document.querySelector('.touchable');
-obj.addEventListener('mousedown', dragStart);
+obj.addEventListener('touchstart', dragStart);
 let shiftX;
 let shiftY;
 
 function dragStart(e) {
   shiftX = e.pageX - getCoords(this).left;
   shiftY = e.pageY - getCoords(this).top;
-  document.addEventListener('mousemove', dragMove);
-  document.addEventListener('mouseup', dragEnd);
+  document.addEventListener('touchmove', dragMove);
+  document.addEventListener('touchend', dragEnd);
 }
 
 function dragMove(e) {
@@ -16,11 +16,10 @@ function dragMove(e) {
 }
 
 function dragEnd() {
-  document.removeEventListener('mouseup', dragEnd);
-  document.removeEventListener('mousemove', dragMove);
+  document.removeEventListener('touchend', dragEnd);
+  document.removeEventListener('touchmove', dragMove);
 }
     
-
 function getCoords(elem) {
   let coords = elem.getBoundingClientRect();
   return {
