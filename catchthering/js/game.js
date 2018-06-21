@@ -36,6 +36,7 @@ function startGame(currentLevel) {
   levelNum.innerHTML = currentLevel;
   updateTimer();
   isClickBloked = false;
+  if (currentLevel == 3) isClickBloked = true;
   showRingTimerId = setInterval(function () {
     showRing(hideInterval);
   }, showInterval);
