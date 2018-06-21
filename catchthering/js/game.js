@@ -69,7 +69,7 @@ function showRing(hideInterval) {
   holes[holeNum].appendChild(ring);
   setTimeout(function () {
     ring.classList.add('img-container--show');
-  }, 4);
+  }, 50);
   hideRingTimerId = setTimeout(function () {
     return hideRing();
   }, hideInterval);
