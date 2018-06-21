@@ -15,6 +15,7 @@ var hideRingTimerId;
 var showRingTimerId;
 var currentLevel = 1;
 var currentTime = 30;
+var isClickBloked = false;
 
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].onclick = function () {
@@ -24,14 +25,17 @@ for (var i = 0; i < buttons.length; i++) {
 }
 
 ring.onmousedown = function () {
+  if (isClickBloked) return;
+  isClickBloked = true;
   stopGame('win');
 };
 
 function startGame(currentLevel) {
-  var showInterval = 3000 - 500 * currentLevel;
+  var showInterval = 2500 - 500 * currentLevel;
   var hideInterval = 1000 - 200 * currentLevel;
   levelNum.innerHTML = currentLevel;
   updateTimer();
+  isClickBloked = false;
   showRingTimerId = setInterval(function () {
     showRing(hideInterval);
   }, showInterval);
