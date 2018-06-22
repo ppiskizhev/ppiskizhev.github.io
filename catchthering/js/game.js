@@ -10,12 +10,17 @@ var modalIntro = document.querySelector('.modal-intro');
 var modalLevel = document.querySelector('.modal-next-level');
 var modalLevelCount = document.querySelector('.modal-next-level__count');
 var buttons = document.querySelectorAll('.btn');
+var loader = document.querySelector('.holder');
 var updateTimerId;
 var hideRingTimerId;
 var showRingTimerId;
 var currentLevel = 1;
 var currentTime = 30;
 var isClickBloked = false;
+
+window.onload = function () {
+  loader.style.display = 'none';
+};
 
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].onclick = function () {
@@ -32,7 +37,7 @@ ring.onmousedown = function () {
 
 function startGame(currentLevel) {
   var showInterval = 2500 - 500 * currentLevel;
-  var hideInterval = 1000 - 200 * currentLevel;
+  var hideInterval = 1200 - 300 * currentLevel;
   levelNum.innerHTML = currentLevel;
   updateTimer();
   isClickBloked = false;
