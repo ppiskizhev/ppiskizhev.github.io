@@ -48,7 +48,8 @@ label {
   top: 0;
   min-width: 375px;
   width: 100%;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  z-index: 1000; }
 
 @media (min-width: 1200px) {
   .page-header {
