@@ -1,0 +1,1 @@
+"use strict";var plannedScenariosSlider=new HorizontalSlider(document.querySelector(".scoreboard__scenarios")),devicesSlider=new HorizontalSlider(document.querySelector(".devices__container")),scenariosSlider=new HorizontalSlider(document.querySelector(".scenarios__container"));
