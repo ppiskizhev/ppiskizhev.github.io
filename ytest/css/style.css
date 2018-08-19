@@ -257,11 +257,31 @@ label {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
+  .scenarios__controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 30px; }
+  .scenarios__control {
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border: 1px solid black;
+    outline: none; }
+    .scenarios__control:hover {
+      background-color: yellow; }
+    .scenarios__control:active {
+      background-color: green; }
   .scenarios__list {
+    -webkit-writing-mode: vertical-lr;
+        -ms-writing-mode: tb-lr;
+            writing-mode: vertical-lr;
+    height: 331px;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    padding-left: 10px;
-    padding-right: 0; } }
+    padding: 0 10px; } }
 
 .scenario {
   display: -webkit-box;
@@ -320,8 +340,10 @@ label {
 
 @media (min-width: 1200px) {
   .scenario {
-    margin: 6px;
-    margin-right: 5px; }
+    margin: 5px;
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb; }
     .scenario--planned {
       margin: 8px 0; } }
 
@@ -380,6 +402,9 @@ label {
   display: inline-flex;
   padding: 0 10px; }
 
+.scoreboard__scenarios-tip {
+  display: none; }
+
 @media (min-width: 1200px) {
   .scoreboard {
     display: -webkit-box;
@@ -412,6 +437,7 @@ label {
     background: url("../img/sprite@1x.png") no-repeat -8px -6px;
     background-size: 125px; }
   .scoreboard__scenarios {
+    position: relative;
     width: 200px;
     height: 331px;
     margin-right: 20px;
@@ -426,6 +452,22 @@ label {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 10px 0; } }
+
+.scoreboard__scenarios-tip {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 16px;
+  bottom: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: url("../img/M.png") no-repeat top center;
+  background-size: 16px auto;
+  pointer-events: none; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .scoreboard__scenarios-tip {
+      background-image: url("../img/M@2x.png"); } }
 
 .devices {
   padding-top: 30px; }
@@ -454,7 +496,7 @@ label {
 
 @media (min-width: 1200px) {
   .devices {
-    max-width: 1366px;
+    max-width: 100%;
     -ms-flex-negative: 0;
         flex-shrink: 0; }
   .devices__header {
@@ -466,10 +508,22 @@ label {
             justify-content: space-between; }
   .devices__title {
     padding: 0; }
-  .devices__list {
+  .devices__controls {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-right: 30px; }
+  .devices__control {
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border: 1px solid black;
+    outline: none; }
+    .devices__control:hover {
+      background-color: yellow; }
+    .devices__control:active {
+      background-color: green; }
+  .devices__list {
     padding: 0; } }
 
 .device {
