@@ -1,1 +1,1 @@
-"use strict";
+"use strict";for(var titles=document.querySelectorAll(".event__title"),i=0;i<titles.length;i++)truncateTitle(titles[i]);
