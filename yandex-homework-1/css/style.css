@@ -375,8 +375,9 @@ svg g#favorites {
 .event__close,
 .event__open {
   position: absolute;
+  padding: 2px;
   right: 15px;
-  background: #fafafa;
+  background: #f3f3f3;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -389,7 +390,8 @@ svg g#favorites {
   top: 15px; }
 
 .event__open {
-  bottom: 15px; }
+  bottom: 15px;
+  padding: 2px 5px; }
 
 @media (min-width: 1200px) {
   .event--large {
@@ -656,14 +658,12 @@ svg g#favorites {
     padding: 15px 0; } }
 
 .cam {
-  margin-top: 30px;
-  border-radius: 20px;
-  overflow: hidden; }
-  .cam img {
-    display: block; }
+  margin-top: 30px; }
 
 .cam__pic {
-  position: relative; }
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px; }
 
 .cam__slider {
   position: absolute;
@@ -676,6 +676,27 @@ svg g#favorites {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 2px; }
 
+.cam__params {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  color: #333333; }
+
+.cam__scale,
+.cam__brightness {
+  display: block; }
+
 #cam-pic {
+  display: block;
   -ms-touch-action: none;
       touch-action: none; }
+
+@media (max-width: 1200px) {
+  .cam__params {
+    font-size: 12px; } }
