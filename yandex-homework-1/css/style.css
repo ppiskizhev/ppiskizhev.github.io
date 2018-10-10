@@ -695,7 +695,11 @@ svg g#favorites {
 #cam-pic {
   display: block;
   -ms-touch-action: none;
-      touch-action: none; }
+      touch-action: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 @media (max-width: 1200px) {
   .cam__params {
